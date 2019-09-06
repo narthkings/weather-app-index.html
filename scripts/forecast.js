@@ -1,7 +1,7 @@
 const apiKey = 'csCqR08v8oDNL9XHNpsa3rgUOs8bzCuC ';
 
 const getWeatherCondition = async(id) => {
-    const resource_url = 'http://dataservice.accuweather.com/currentconditions/v1/';
+    const resource_url = 'https://dataservice.accuweather.com/currentconditions/v1/';
     const base = `${id}?apikey=${apiKey}`;
     const response = await fetch(resource_url + base);
     const data = await response.json();
@@ -11,7 +11,7 @@ const getWeatherCondition = async(id) => {
 
 const getCity = async(city) => {
     // get url together with the base (apikey and city)
-    const resource_url = 'http://dataservice.accuweather.com/locations/v1/cities/search';
+    const resource_url = 'https://dataservice.accuweather.com/locations/v1/cities/search';
     const base = `?apikey=${apiKey}&q=${city}`;
 
     // retrurn a promise which holds the endpoint
