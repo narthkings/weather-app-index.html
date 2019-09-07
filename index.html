@@ -15,11 +15,11 @@
     <div class="container my-5 mx-auto">
 
         <h1 class="text-muted text-center my-4">Weather App</h1>
-        <form class="change-location my-4 text-center text-muted">
+        <div class="change-location my-4 text-center text-muted">
             <label for="city">Enter a location for weather information</label>
-            <input type="text" name="city" placeholder="Press the enter button/return key " class="form-control p-4">
-            <span><input type="button" value="search"></span>
-        </form>
+            <input type="text" name="city" placeholder="Press the enter button/return key " id="city" class="form-control p-4">
+            <span><input type="button" id="btn_submit" class="btn" value="search"></span>
+        </div>
 
         <div class="card shadow-lg d-none">
             <img src="https://via.placeholder.com/400x300" class="time card-img-top" alt="">

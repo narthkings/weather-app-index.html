@@ -3,6 +3,8 @@ const details = document.querySelector('.details');
 const card = document.querySelector('.card');
 const time = document.querySelector('img.time');
 const icon = document.querySelector('.icon img');
+const search = document.querySelector('#city');
+
 
 const updateCity = async(city) => {
     // get details of the city and the weather condition
@@ -48,10 +50,12 @@ const updateUI = (data) => {
 
 
 // submit searched location and get log out the data from the network request
-form_city.addEventListener('submit', e => {
-    e.preventDefault()
-    const city = form_city.city.value.trim();
-    form_city.reset();
+search.addEventListener('change', e => {
+    const city = search.value.trim();
+    // console.log(city);
+    if (city.length) {
+        search.value = "";
+    }
     updateCity(city)
         .then(data => updateUI(data))
         .catch(err => console.log(err.message));
