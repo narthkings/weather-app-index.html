@@ -29,9 +29,18 @@ const updateUI = (data) => {
             <div class="text-muted text-uppercase text-center details">
                 <h5 class="my-3">${cityDetails.EnglishName}</h5>
                 <div class="my-3">${weatherDetails.WeatherText}</div>
+                <h5 class="my-3">
+                    <span>${cityDetails.AdministrativeArea.CountryID}</span>
+                    <span>${cityDetails.TimeZone.Code}</span>
+                </h5>
+                <h4 class="my-3">${cityDetails.TimeZone.Name}</h4>
                 <div class="display-4 my-4">
                     <span>${weatherDetails.Temperature.Metric.Value}</span>
                     <span>&deg;C</span>
+                </div>
+                <div class="display-4 my-4">
+                    <span>${weatherDetails.Temperature.Imperial.Value}</span>
+                    <span>&deg;F</span>
                 </div>
             </div>
     `;
