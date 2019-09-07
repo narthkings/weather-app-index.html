@@ -15,3 +15,11 @@ body {
     width: 100px;
     margin-bottom: -50px;
 }
+
+.btn {
+    margin-top: 0.3rem;
+    outline: none;
+    background: rgb(173, 171, 171);
+    color: #eeedec;
+    line-height: 1.5;
+}

@@ -1,4 +1,4 @@
-const form_city = document.querySelector('form');
+const error_message = document.querySelector('error_message');
 const details = document.querySelector('.details');
 const card = document.querySelector('.card');
 const time = document.querySelector('img.time');
@@ -10,7 +10,9 @@ const updateCity = async(city) => {
     // get details of the city and the weather condition
     const cityDetails = await getCity(city);
     const weatherDetails = await getWeatherCondition(cityDetails.Key);
+
     return { cityDetails, weatherDetails };
+
 };
 
 // update the ui with the data gotten from the network
@@ -38,13 +40,13 @@ const updateUI = (data) => {
     const iconSrc = `img/icons/${weatherDetails.WeatherIcon}.svg`;
     icon.setAttribute('src', iconSrc);
 
-    // let timeSrc = null;
     const timeSrc = weatherDetails.IsDayTime ? 'img/day.svg' : 'img/night.svg';
     time.setAttribute('src', timeSrc);
 
     if (card.classList.contains('d-none')) {
         card.classList.remove('d-none');
     }
+
 };
 
 
@@ -52,7 +54,6 @@ const updateUI = (data) => {
 // submit searched location and get log out the data from the network request
 search.addEventListener('change', e => {
     const city = search.value.trim();
-    // console.log(city);
     if (city.length) {
         search.value = "";
     }
