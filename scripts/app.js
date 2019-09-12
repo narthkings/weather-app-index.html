@@ -69,4 +69,14 @@ search.addEventListener('change', e => {
     updateCity(city)
         .then(data => updateUI(data))
         .catch(err => console.log(err.message));
+
+    // set localstorage
+    localStorage.setItem('city', city);
 });
+
+// if we have any data in our local storage update it to the dom
+if (localStorage.getItem('city')) {
+    updateCity(localStorage.getItem('city', city))
+        .then(data => updateUI(data))
+        .catch(err => console.log(err.message));
+}
