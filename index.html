@@ -10,12 +10,16 @@
     <link rel="stylesheet" href="styles.css">
     <title>Weather App</title>
     <style>
+        .parent {
+            position: relative;
+        }
+        
         .clear {
             width: 30px;
             height: 30px;
             position: absolute;
-            right: 30%;
-            top: 44%;
+            right: 8%;
+            top: 28%;
             z-index: 99;
         }
         
@@ -34,7 +38,7 @@
 
 <body>
 
-    <div class="container my-5 mx-auto">
+    <div class="container my-5 mx-auto parent">
 
         <h1 class="text-muted text-center my-4">Weather App ⛈⛅</h1>
         <div class="clear d-none">
