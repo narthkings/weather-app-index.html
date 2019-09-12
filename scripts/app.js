@@ -4,6 +4,7 @@ const card = document.querySelector('.card');
 const time = document.querySelector('img.time');
 const icon = document.querySelector('.icon img');
 const search = document.querySelector('#city');
+const clear = document.querySelector('.clear');
 
 
 const updateCity = async(city) => {
@@ -52,12 +53,16 @@ const updateUI = (data) => {
     const timeSrc = weatherDetails.IsDayTime ? 'img/day.svg' : 'img/night.svg';
     time.setAttribute('src', timeSrc);
 
-    if (card.classList.contains('d-none')) {
+    if (card.classList.contains('d-none') && clear.classList.contains('d-none')) {
         card.classList.remove('d-none');
+        clear.classList.remove('d-none');
     }
 
 };
-
+clear.addEventListener('click', () => {
+    localStorage.clear();
+    location.reload();
+})
 
 
 // submit searched location and get log out the data from the network request

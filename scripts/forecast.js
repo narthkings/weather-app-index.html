@@ -1,4 +1,4 @@
-const apiKey = 'BCX4aAPMj3Q44U6Zv1zlsEeOAPaTVADn ';
+const apiKey = '8cEISv2nVDdWb5aMTBhRnV47vrz8GCR3 ';
 
 const getWeatherCondition = async(id) => {
     const resource_url = 'https://dataservice.accuweather.com/currentconditions/v1/';
