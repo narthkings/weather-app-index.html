@@ -5,16 +5,7 @@ const time = document.querySelector('img.time');
 const icon = document.querySelector('.icon img');
 const search = document.querySelector('#city');
 const clear = document.querySelector('.clear');
-
-
-const updateCity = async(city) => {
-    // get details of the city and the weather condition
-    const cityDetails = await getCity(city);
-    const weatherDetails = await getWeatherCondition(cityDetails.Key);
-
-    return { cityDetails, weatherDetails };
-
-};
+const forecast = new Forecast();
 
 // update the ui with the data gotten from the network
 const updateUI = (data) => {
@@ -71,7 +62,7 @@ search.addEventListener('change', e => {
     if (city.length) {
         search.value = "";
     }
-    updateCity(city)
+    forecast.updateCity(city)
         .then(data => updateUI(data))
         .catch(err => console.log(err.message));
 
@@ -81,7 +72,7 @@ search.addEventListener('change', e => {
 
 // if we have any data in our local storage update it to the dom
 if (localStorage.getItem('city')) {
-    updateCity(localStorage.getItem('city', city))
+    forecast.updateCity(localStorage.getItem('city', city))
         .then(data => updateUI(data))
         .catch(err => console.log(err.message));
 }
